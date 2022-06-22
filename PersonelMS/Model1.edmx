@@ -1,0 +1,1794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PersonelMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="M_tblDistrict">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DivId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NameBangla" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Lat" Type="varchar" MaxLength="15" />
+          <Property Name="Lon" Type="varchar" MaxLength="15" />
+          <Property Name="URL" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_tblUpazila">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DisId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NameBangla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="URL" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_tblVillage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="NameBangla" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBank">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBankTransaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="TrackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="TransactionType" Type="varchar" MaxLength="50" />
+          <Property Name="Bank" Type="varchar" MaxLength="10" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Deposit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Withdraw" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeDate" Type="datetime" />
+          <Property Name="ChequeDetails" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCategory">
+          <Key>
+            <PropertyRef Name="CatId" />
+          </Key>
+          <Property Name="CatId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="ComId" />
+          </Key>
+          <Property Name="ComId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Contact1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Contact2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompanyMoto" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompanyLogo" Type="image" />
+          <Property Name="st_dt" Type="datetime" />
+          <Property Name="ed_dt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCostCenters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblCostElements">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="CostCenterId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCustomers">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="CustId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisId" Type="int" />
+          <Property Name="UpaId" Type="int" />
+          <Property Name="ViId" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsSpecial" Type="bit" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblEmail">
+          <Key>
+            <PropertyRef Name="RPTCATEGORY" />
+          </Key>
+          <Property Name="MODULEID" Type="int" Nullable="false" />
+          <Property Name="UIID" Type="int" Nullable="false" />
+          <Property Name="RPTCATEGORY" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FROMEMAILID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="SUBJECT" Type="nvarchar" MaxLength="100" />
+          <Property Name="BODY" Type="nvarchar" MaxLength="500" />
+          <Property Name="LMBY" Type="nvarchar" MaxLength="21" />
+          <Property Name="LMDT" Type="datetime" />
+          <Property Name="IPADDRESS" Type="varchar" MaxLength="15" />
+          <Property Name="MACHINEID" Type="nvarchar" MaxLength="255" />
+          <Property Name="FILEPATH" Type="varchar" MaxLength="100" />
+          <Property Name="EMAILPWD" Type="varchar" MaxLength="15" />
+          <Property Name="SMTPHOST" Type="varchar" MaxLength="50" />
+          <Property Name="PORT" Type="int" />
+          <Property Name="SSLSTATUS" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblExpense">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CostHead" Type="int" />
+          <Property Name="CostElement" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="StaffId" Type="int" />
+          <Property Name="HandedTo" Type="varchar" MaxLength="150" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIncome">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IncomeSource" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ReceivedBy" Type="varchar" MaxLength="150" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblIncomeSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tblItems">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SrlCode" Type="int" />
+          <Property Name="ItemName" Type="varchar" MaxLength="300" />
+          <Property Name="ItemCatId" Type="varchar" MaxLength="20" />
+          <Property Name="SupId" Type="int" />
+          <Property Name="Brand" Type="varchar" MaxLength="20" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="ItemSize" Type="int" />
+          <Property Name="ItemType" Type="varchar" MaxLength="20" />
+          <Property Name="ItemUnit" Type="varchar" MaxLength="20" />
+          <Property Name="PurRate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="SalesRate" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MinQty" Type="int" />
+          <Property Name="MaxQty" Type="int" />
+          <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pack" Type="int" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="UsedFor" Type="varchar" MaxLength="20" />
+          <Property Name="Notes" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblItemSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblLendBorrow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Lend" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Borrow" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CustId" Type="int" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblLogIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PersonelMS.dbo.tblMoneyReceived' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblMoneyReceived">
+          <Key>
+            <PropertyRef Name="CustCode" />
+            <PropertyRef Name="ReceivedDate" />
+            <PropertyRef Name="ReceiveAmount" />
+            <PropertyRef Name="lmdt" />
+            <PropertyRef Name="track_id" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="SalesId" Type="varchar" MaxLength="15" />
+          <Property Name="CustCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReceivedDate" Type="datetime" Nullable="false" />
+          <Property Name="ReceiveAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PayMode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChequeNo" Type="nvarchar" MaxLength="80" />
+          <Property Name="ChequeDt" Type="datetime" />
+          <Property Name="DepositBank" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ChequeDetails" Type="nvarchar" MaxLength="250" />
+          <Property Name="Particulars" Type="nvarchar" MaxLength="200" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="300" />
+          <Property Name="lmdt" Type="datetime" Nullable="false" />
+          <Property Name="userid" Type="varchar" MaxLength="100" />
+          <Property Name="track_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOpeningStocks">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="StockQty" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Details" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblPacking">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblPayment">
+          <Key>
+            <PropertyRef Name="TrackId" />
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="TrackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PurId" Type="varchar" MaxLength="7" />
+          <Property Name="SupplierId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PayMode" Type="varchar" MaxLength="50" />
+          <Property Name="PayDate" Type="datetime" Nullable="false" />
+          <Property Name="PayAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DueAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeDate" Type="datetime" />
+          <Property Name="BankName" Type="varchar" MaxLength="150" />
+          <Property Name="ChequeDetails" Type="varchar" MaxLength="250" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblPurchaseDTL">
+          <Key>
+            <PropertyRef Name="PurId" />
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="PurId" Type="int" Nullable="false" />
+          <Property Name="SupplierId" Type="int" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblPurchaseHDR">
+          <Key>
+            <PropertyRef Name="PurID" />
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="PurID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BillNo" Type="varchar" MaxLength="50" />
+          <Property Name="BillDate" Type="datetime" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="200" />
+          <Property Name="PacketCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LabourCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AgentCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Due" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PayMode" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="80" />
+          <Property Name="ChequeDt" Type="datetime" />
+          <Property Name="BankName" Type="varchar" MaxLength="150" />
+          <Property Name="ChequeDetails" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lmdt" Type="datetime" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OpBalance" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tblRatioCalculationDTL">
+          <Key>
+            <PropertyRef Name="RatioId" />
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="RatioId" Type="int" Nullable="false" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TotalSacks" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalMon" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Userid" Type="varchar" MaxLength="50" />
+          <Property Name="dt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblRatioCalculationHDR">
+          <Key>
+            <PropertyRef Name="RatioId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="RatioId" Type="int" Nullable="false" />
+          <Property Name="CrashingDate" Type="datetime" />
+          <Property Name="PurchaseCarryingCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MillCrashingCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EmptySackCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SalesCarryingCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SackSewingCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SutliCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KuliCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KayelCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TrolleyCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ChadaCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KhajnaCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalProducedQty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProducedPerUnit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CostPerSack" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="Userid" Type="varchar" MaxLength="50" />
+          <Property Name="dt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblRecipient">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="selected" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tblSalesDTL">
+          <Key>
+            <PropertyRef Name="SalesId" />
+            <PropertyRef Name="ComId" />
+            <PropertyRef Name="Itemcode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="SalesId" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ComId" Type="int" Nullable="false" />
+          <Property Name="CustId" Type="int" />
+          <Property Name="Itemcode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="5" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblSalesHDR">
+          <Key>
+            <PropertyRef Name="SalesId" />
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="SalesId" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SalesDate" Type="datetime" />
+          <Property Name="CustId" Type="int" Nullable="false" />
+          <Property Name="ComId" Type="int" />
+          <Property Name="ShipTo" Type="int" />
+          <Property Name="Reference" Type="varchar" MaxLength="100" />
+          <Property Name="Remarks" Type="varchar" MaxLength="200" />
+          <Property Name="PacketCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LabourCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AgentCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TaxVAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PayMode" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="80" />
+          <Property Name="ChequeDt" Type="datetime" />
+          <Property Name="BankName" Type="varchar" MaxLength="150" />
+          <Property Name="ChequeDetails" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lmdt" Type="datetime" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OpBalance" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tblSalesReturn">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CustCode" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="dt" Type="datetime" />
+          <Property Name="TrackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblStaff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisId" Type="int" />
+          <Property Name="UpaId" Type="int" />
+          <Property Name="ViId" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PersonelMS.dbo.tblStockDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblStockDetails">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="StockQty" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Details" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblStocks">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="StockQty" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="Details" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblSuppliers">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="int" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisId" Type="int" />
+          <Property Name="UpaId" Type="int" />
+          <Property Name="ViId" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lmdt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Role" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="ConPassword" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="PersonelMSModelStoreContainer">
+          <EntitySet Name="M_tblDistrict" EntityType="Self.M_tblDistrict" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_tblUpazila" EntityType="Self.M_tblUpazila" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_tblVillage" EntityType="Self.M_tblVillage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBank" EntityType="Self.tblBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBankTransaction" EntityType="Self.tblBankTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCompany" EntityType="Self.tblCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCostCenters" EntityType="Self.tblCostCenters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCostElements" EntityType="Self.tblCostElements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomers" EntityType="Self.tblCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmail" EntityType="Self.tblEmail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblExpense" EntityType="Self.tblExpense" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIncome" EntityType="Self.tblIncome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIncomeSource" EntityType="Self.tblIncomeSource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblItems" EntityType="Self.tblItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblItemSize" EntityType="Self.tblItemSize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblItemType" EntityType="Self.tblItemType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLendBorrow" EntityType="Self.tblLendBorrow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLogIn" EntityType="Self.tblLogIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOpeningStocks" EntityType="Self.tblOpeningStocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPacking" EntityType="Self.tblPacking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPayment" EntityType="Self.tblPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPurchaseDTL" EntityType="Self.tblPurchaseDTL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPurchaseHDR" EntityType="Self.tblPurchaseHDR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRatioCalculationDTL" EntityType="Self.tblRatioCalculationDTL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRatioCalculationHDR" EntityType="Self.tblRatioCalculationHDR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRecipient" EntityType="Self.tblRecipient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalesDTL" EntityType="Self.tblSalesDTL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalesHDR" EntityType="Self.tblSalesHDR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalesReturn" EntityType="Self.tblSalesReturn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStaff" EntityType="Self.tblStaff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStocks" EntityType="Self.tblStocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSuppliers" EntityType="Self.tblSuppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMoneyReceived" EntityType="Self.tblMoneyReceived" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblMoneyReceived].[IdClient] AS [IdClient], 
+    [tblMoneyReceived].[SalesId] AS [SalesId], 
+    [tblMoneyReceived].[CustCode] AS [CustCode], 
+    [tblMoneyReceived].[ReceivedDate] AS [ReceivedDate], 
+    [tblMoneyReceived].[ReceiveAmount] AS [ReceiveAmount], 
+    [tblMoneyReceived].[PayMode] AS [PayMode], 
+    [tblMoneyReceived].[ChequeNo] AS [ChequeNo], 
+    [tblMoneyReceived].[ChequeDt] AS [ChequeDt], 
+    [tblMoneyReceived].[DepositBank] AS [DepositBank], 
+    [tblMoneyReceived].[BankName] AS [BankName], 
+    [tblMoneyReceived].[ChequeDetails] AS [ChequeDetails], 
+    [tblMoneyReceived].[Particulars] AS [Particulars], 
+    [tblMoneyReceived].[Remarks] AS [Remarks], 
+    [tblMoneyReceived].[lmdt] AS [lmdt], 
+    [tblMoneyReceived].[userid] AS [userid], 
+    [tblMoneyReceived].[track_id] AS [track_id]
+    FROM [dbo].[tblMoneyReceived] AS [tblMoneyReceived]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblStockDetails" EntityType="Self.tblStockDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblStockDetails].[IdClient] AS [IdClient], 
+    [tblStockDetails].[ItemCode] AS [ItemCode], 
+    [tblStockDetails].[StockQty] AS [StockQty], 
+    [tblStockDetails].[EntryDate] AS [EntryDate], 
+    [tblStockDetails].[Details] AS [Details], 
+    [tblStockDetails].[UserId] AS [UserId], 
+    [tblStockDetails].[Lmdt] AS [Lmdt]
+    FROM [dbo].[tblStockDetails] AS [tblStockDetails]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PersonelMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PersonelMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="M_tblDistrict" EntityType="PersonelMSModel.M_tblDistrict" />
+          <EntitySet Name="M_tblUpazila" EntityType="PersonelMSModel.M_tblUpazila" />
+          <EntitySet Name="M_tblVillage" EntityType="PersonelMSModel.M_tblVillage" />
+          <EntitySet Name="tblBanks" EntityType="PersonelMSModel.tblBank" />
+          <EntitySet Name="tblBankTransactions" EntityType="PersonelMSModel.tblBankTransaction" />
+          <EntitySet Name="tblCategories" EntityType="PersonelMSModel.tblCategory" />
+          <EntitySet Name="tblCompanies" EntityType="PersonelMSModel.tblCompany" />
+          <EntitySet Name="tblCostCenters" EntityType="PersonelMSModel.tblCostCenter" />
+          <EntitySet Name="tblCostElements" EntityType="PersonelMSModel.tblCostElement" />
+          <EntitySet Name="tblCustomers" EntityType="PersonelMSModel.tblCustomer" />
+          <EntitySet Name="tblEmails" EntityType="PersonelMSModel.tblEmail" />
+          <EntitySet Name="tblExpenses" EntityType="PersonelMSModel.tblExpense" />
+          <EntitySet Name="tblIncomes" EntityType="PersonelMSModel.tblIncome" />
+          <EntitySet Name="tblIncomeSources" EntityType="PersonelMSModel.tblIncomeSource" />
+          <EntitySet Name="tblItems" EntityType="PersonelMSModel.tblItem" />
+          <EntitySet Name="tblItemSizes" EntityType="PersonelMSModel.tblItemSize" />
+          <EntitySet Name="tblItemTypes" EntityType="PersonelMSModel.tblItemType" />
+          <EntitySet Name="tblLendBorrows" EntityType="PersonelMSModel.tblLendBorrow" />
+          <EntitySet Name="tblLogIns" EntityType="PersonelMSModel.tblLogIn" />
+          <EntitySet Name="tblOpeningStocks" EntityType="PersonelMSModel.tblOpeningStock" />
+          <EntitySet Name="tblPackings" EntityType="PersonelMSModel.tblPacking" />
+          <EntitySet Name="tblPayments" EntityType="PersonelMSModel.tblPayment" />
+          <EntitySet Name="tblPurchaseDTLs" EntityType="PersonelMSModel.tblPurchaseDTL" />
+          <EntitySet Name="tblPurchaseHDRs" EntityType="PersonelMSModel.tblPurchaseHDR" />
+          <EntitySet Name="tblRatioCalculationDTLs" EntityType="PersonelMSModel.tblRatioCalculationDTL" />
+          <EntitySet Name="tblRatioCalculationHDRs" EntityType="PersonelMSModel.tblRatioCalculationHDR" />
+          <EntitySet Name="tblRecipients" EntityType="PersonelMSModel.tblRecipient" />
+          <EntitySet Name="tblSalesDTLs" EntityType="PersonelMSModel.tblSalesDTL" />
+          <EntitySet Name="tblSalesHDRs" EntityType="PersonelMSModel.tblSalesHDR" />
+          <EntitySet Name="tblSalesReturns" EntityType="PersonelMSModel.tblSalesReturn" />
+          <EntitySet Name="tblStaffs" EntityType="PersonelMSModel.tblStaff" />
+          <EntitySet Name="tblStocks" EntityType="PersonelMSModel.tblStock" />
+          <EntitySet Name="tblSuppliers" EntityType="PersonelMSModel.tblSupplier" />
+          <EntitySet Name="tblUsers" EntityType="PersonelMSModel.tblUser" />
+          <EntitySet Name="tblMoneyReceiveds" EntityType="PersonelMSModel.tblMoneyReceived" />
+          <EntitySet Name="tblStockDetails" EntityType="PersonelMSModel.tblStockDetail" />
+        </EntityContainer>
+        <EntityType Name="M_tblDistrict">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DivId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NameBangla" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Lat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Lon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="M_tblUpazila">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DisId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NameBangla" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="M_tblVillage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NameBangla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBank">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblBankTransaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="TrackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bank" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Deposit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Withdraw" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+          <Property Name="ChequeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblCategory">
+          <Key>
+            <PropertyRef Name="CatId" />
+          </Key>
+          <Property Name="CatId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="ComId" />
+          </Key>
+          <Property Name="ComId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Contact1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Contact2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyMoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyLogo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="st_dt" Type="DateTime" Precision="3" />
+          <Property Name="ed_dt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblCostCenter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCostElement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CostCenterId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblCustomer">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="CustId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisId" Type="Int32" />
+          <Property Name="UpaId" Type="Int32" />
+          <Property Name="ViId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsSpecial" Type="Boolean" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblEmail">
+          <Key>
+            <PropertyRef Name="RPTCATEGORY" />
+          </Key>
+          <Property Name="MODULEID" Type="Int32" Nullable="false" />
+          <Property Name="UIID" Type="Int32" Nullable="false" />
+          <Property Name="RPTCATEGORY" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FROMEMAILID" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SUBJECT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BODY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LMBY" Type="String" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Name="LMDT" Type="DateTime" Precision="3" />
+          <Property Name="IPADDRESS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MACHINEID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FILEPATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILPWD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SMTPHOST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PORT" Type="Int32" />
+          <Property Name="SSLSTATUS" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblExpense">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CostHead" Type="Int32" />
+          <Property Name="CostElement" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="HandedTo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblIncome">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IncomeSource" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ReceivedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblIncomeSource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblItem">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SrlCode" Type="Int32" />
+          <Property Name="ItemName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ItemCatId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SupId" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ItemSize" Type="Int32" />
+          <Property Name="ItemType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ItemUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PurRate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SalesRate" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MinQty" Type="Int32" />
+          <Property Name="MaxQty" Type="Int32" />
+          <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pack" Type="Int32" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UsedFor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblItemSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblLendBorrow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Lend" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Borrow" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CustId" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblLogIn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblOpeningStock">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StockQty" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblPacking">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblPayment">
+          <Key>
+            <PropertyRef Name="TrackId" />
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="TrackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurId" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PayMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PayDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PayAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PaidAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DueAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ChequeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblPurchaseDTL">
+          <Key>
+            <PropertyRef Name="PurId" />
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="PurId" Type="Int32" Nullable="false" />
+          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UserId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblPurchaseHDR">
+          <Key>
+            <PropertyRef Name="PurID" />
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="PurID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillDate" Type="DateTime" Precision="3" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PacketCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LabourCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AgentCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PayMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDt" Type="DateTime" Precision="3" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OpBalance" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblRatioCalculationDTL">
+          <Key>
+            <PropertyRef Name="RatioId" />
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="RatioId" Type="Int32" Nullable="false" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TotalSacks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalMon" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Userid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblRatioCalculationHDR">
+          <Key>
+            <PropertyRef Name="RatioId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="RatioId" Type="Int32" Nullable="false" />
+          <Property Name="CrashingDate" Type="DateTime" Precision="3" />
+          <Property Name="PurchaseCarryingCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MillCrashingCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EmptySackCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SalesCarryingCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SackSewingCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SutliCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KuliCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KayelCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TrolleyCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ChadaCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KhajnaCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalProducedQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProducedPerUnit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CostPerSack" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Userid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblRecipient">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="selected" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSalesDTL">
+          <Key>
+            <PropertyRef Name="SalesId" />
+            <PropertyRef Name="ComId" />
+            <PropertyRef Name="Itemcode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="SalesId" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ComId" Type="Int32" Nullable="false" />
+          <Property Name="CustId" Type="Int32" />
+          <Property Name="Itemcode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UserId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblSalesHDR">
+          <Key>
+            <PropertyRef Name="SalesId" />
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="SalesId" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SalesDate" Type="DateTime" Precision="3" />
+          <Property Name="CustId" Type="Int32" Nullable="false" />
+          <Property Name="ComId" Type="Int32" />
+          <Property Name="ShipTo" Type="Int32" />
+          <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PacketCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LabourCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AgentCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TaxVAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PayMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDt" Type="DateTime" Precision="3" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OpBalance" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSalesReturn">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CustCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dt" Type="DateTime" Precision="3" />
+          <Property Name="TrackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblStaff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisId" Type="Int32" />
+          <Property Name="UpaId" Type="Int32" />
+          <Property Name="ViId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblStock">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StockQty" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblSupplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisId" Type="Int32" />
+          <Property Name="UpaId" Type="Int32" />
+          <Property Name="ViId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ConPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblMoneyReceived">
+          <Key>
+            <PropertyRef Name="CustCode" />
+            <PropertyRef Name="ReceivedDate" />
+            <PropertyRef Name="ReceiveAmount" />
+            <PropertyRef Name="lmdt" />
+            <PropertyRef Name="track_id" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="SalesId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CustCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ReceivedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReceiveAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PayMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChequeNo" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ChequeDt" Type="DateTime" Precision="3" />
+          <Property Name="DepositBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ChequeDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Particulars" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="lmdt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="track_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblStockDetail">
+          <Key>
+            <PropertyRef Name="ItemCode" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StockQty" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lmdt" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PersonelMSModelStoreContainer" CdmEntityContainer="PersonelMSEntities">
+          <EntitySetMapping Name="M_tblDistrict">
+            <EntityTypeMapping TypeName="PersonelMSModel.M_tblDistrict">
+              <MappingFragment StoreEntitySet="M_tblDistrict">
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DivId" ColumnName="DivId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_tblUpazila">
+            <EntityTypeMapping TypeName="PersonelMSModel.M_tblUpazila">
+              <MappingFragment StoreEntitySet="M_tblUpazila">
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisId" ColumnName="DisId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_tblVillage">
+            <EntityTypeMapping TypeName="PersonelMSModel.M_tblVillage">
+              <MappingFragment StoreEntitySet="M_tblVillage">
+                <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+                <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBanks">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblBank">
+              <MappingFragment StoreEntitySet="tblBank">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBankTransactions">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblBankTransaction">
+              <MappingFragment StoreEntitySet="tblBankTransaction">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Withdraw" ColumnName="Withdraw" />
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCategories">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblCategory">
+              <MappingFragment StoreEntitySet="tblCategory">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CatId" ColumnName="CatId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCompanies">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblCompany">
+              <MappingFragment StoreEntitySet="tblCompany">
+                <ScalarProperty Name="ed_dt" ColumnName="ed_dt" />
+                <ScalarProperty Name="st_dt" ColumnName="st_dt" />
+                <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+                <ScalarProperty Name="CompanyMoto" ColumnName="CompanyMoto" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Contact2" ColumnName="Contact2" />
+                <ScalarProperty Name="Contact1" ColumnName="Contact1" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ComId" ColumnName="ComId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCostCenters">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblCostCenter">
+              <MappingFragment StoreEntitySet="tblCostCenters">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCostElements">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblCostElement">
+              <MappingFragment StoreEntitySet="tblCostElements">
+                <ScalarProperty Name="CostCenterId" ColumnName="CostCenterId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomers">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblCustomer">
+              <MappingFragment StoreEntitySet="tblCustomers">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="IsSpecial" ColumnName="IsSpecial" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ViId" ColumnName="ViId" />
+                <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+                <ScalarProperty Name="DisId" ColumnName="DisId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmails">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblEmail">
+              <MappingFragment StoreEntitySet="tblEmail">
+                <ScalarProperty Name="SSLSTATUS" ColumnName="SSLSTATUS" />
+                <ScalarProperty Name="PORT" ColumnName="PORT" />
+                <ScalarProperty Name="SMTPHOST" ColumnName="SMTPHOST" />
+                <ScalarProperty Name="EMAILPWD" ColumnName="EMAILPWD" />
+                <ScalarProperty Name="FILEPATH" ColumnName="FILEPATH" />
+                <ScalarProperty Name="MACHINEID" ColumnName="MACHINEID" />
+                <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+                <ScalarProperty Name="LMDT" ColumnName="LMDT" />
+                <ScalarProperty Name="LMBY" ColumnName="LMBY" />
+                <ScalarProperty Name="BODY" ColumnName="BODY" />
+                <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+                <ScalarProperty Name="FROMEMAILID" ColumnName="FROMEMAILID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="RPTCATEGORY" ColumnName="RPTCATEGORY" />
+                <ScalarProperty Name="UIID" ColumnName="UIID" />
+                <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblExpenses">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblExpense">
+              <MappingFragment StoreEntitySet="tblExpense">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="HandedTo" ColumnName="HandedTo" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CostElement" ColumnName="CostElement" />
+                <ScalarProperty Name="CostHead" ColumnName="CostHead" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIncomes">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblIncome">
+              <MappingFragment StoreEntitySet="tblIncome">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IncomeSource" ColumnName="IncomeSource" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIncomeSources">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblIncomeSource">
+              <MappingFragment StoreEntitySet="tblIncomeSource">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblItems">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblItem">
+              <MappingFragment StoreEntitySet="tblItems">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="UsedFor" ColumnName="UsedFor" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+                <ScalarProperty Name="MaxQty" ColumnName="MaxQty" />
+                <ScalarProperty Name="MinQty" ColumnName="MinQty" />
+                <ScalarProperty Name="SalesRate" ColumnName="SalesRate" />
+                <ScalarProperty Name="PurRate" ColumnName="PurRate" />
+                <ScalarProperty Name="ItemUnit" ColumnName="ItemUnit" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ItemSize" ColumnName="ItemSize" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="SupId" ColumnName="SupId" />
+                <ScalarProperty Name="ItemCatId" ColumnName="ItemCatId" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="SrlCode" ColumnName="SrlCode" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblItemSizes">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblItemSize">
+              <MappingFragment StoreEntitySet="tblItemSize">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblItemTypes">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblItemType">
+              <MappingFragment StoreEntitySet="tblItemType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLendBorrows">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblLendBorrow">
+              <MappingFragment StoreEntitySet="tblLendBorrow">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="Borrow" ColumnName="Borrow" />
+                <ScalarProperty Name="Lend" ColumnName="Lend" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogIns">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblLogIn">
+              <MappingFragment StoreEntitySet="tblLogIn">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOpeningStocks">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblOpeningStock">
+              <MappingFragment StoreEntitySet="tblOpeningStocks">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPackings">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblPacking">
+              <MappingFragment StoreEntitySet="tblPacking">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPayments">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblPayment">
+              <MappingFragment StoreEntitySet="tblPayment">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="DueAmount" ColumnName="DueAmount" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+                <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+                <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="PurId" ColumnName="PurId" />
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPurchaseDTLs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblPurchaseDTL">
+              <MappingFragment StoreEntitySet="tblPurchaseDTL">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="PurId" ColumnName="PurId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPurchaseHDRs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblPurchaseHDR">
+              <MappingFragment StoreEntitySet="tblPurchaseHDR">
+                <ScalarProperty Name="OpBalance" ColumnName="OpBalance" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+                <ScalarProperty Name="Due" ColumnName="Due" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+                <ScalarProperty Name="AgentCost" ColumnName="AgentCost" />
+                <ScalarProperty Name="LabourCost" ColumnName="LabourCost" />
+                <ScalarProperty Name="PacketCost" ColumnName="PacketCost" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="PurID" ColumnName="PurID" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRatioCalculationDTLs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblRatioCalculationDTL">
+              <MappingFragment StoreEntitySet="tblRatioCalculationDTL">
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="TotalMon" ColumnName="TotalMon" />
+                <ScalarProperty Name="TotalSacks" ColumnName="TotalSacks" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="RatioId" ColumnName="RatioId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRatioCalculationHDRs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblRatioCalculationHDR">
+              <MappingFragment StoreEntitySet="tblRatioCalculationHDR">
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CostPerSack" ColumnName="CostPerSack" />
+                <ScalarProperty Name="ProducedPerUnit" ColumnName="ProducedPerUnit" />
+                <ScalarProperty Name="TotalProducedQty" ColumnName="TotalProducedQty" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+                <ScalarProperty Name="KhajnaCost" ColumnName="KhajnaCost" />
+                <ScalarProperty Name="ChadaCost" ColumnName="ChadaCost" />
+                <ScalarProperty Name="TrolleyCost" ColumnName="TrolleyCost" />
+                <ScalarProperty Name="KayelCost" ColumnName="KayelCost" />
+                <ScalarProperty Name="KuliCost" ColumnName="KuliCost" />
+                <ScalarProperty Name="SutliCost" ColumnName="SutliCost" />
+                <ScalarProperty Name="SackSewingCost" ColumnName="SackSewingCost" />
+                <ScalarProperty Name="SalesCarryingCost" ColumnName="SalesCarryingCost" />
+                <ScalarProperty Name="EmptySackCost" ColumnName="EmptySackCost" />
+                <ScalarProperty Name="MillCrashingCost" ColumnName="MillCrashingCost" />
+                <ScalarProperty Name="PurchaseCarryingCost" ColumnName="PurchaseCarryingCost" />
+                <ScalarProperty Name="CrashingDate" ColumnName="CrashingDate" />
+                <ScalarProperty Name="RatioId" ColumnName="RatioId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRecipients">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblRecipient">
+              <MappingFragment StoreEntitySet="tblRecipient">
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalesDTLs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblSalesDTL">
+              <MappingFragment StoreEntitySet="tblSalesDTL">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Itemcode" ColumnName="Itemcode" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="ComId" ColumnName="ComId" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalesHDRs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblSalesHDR">
+              <MappingFragment StoreEntitySet="tblSalesHDR">
+                <ScalarProperty Name="OpBalance" ColumnName="OpBalance" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxVAT" ColumnName="TaxVAT" />
+                <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+                <ScalarProperty Name="AgentCost" ColumnName="AgentCost" />
+                <ScalarProperty Name="LabourCost" ColumnName="LabourCost" />
+                <ScalarProperty Name="PacketCost" ColumnName="PacketCost" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+                <ScalarProperty Name="ComId" ColumnName="ComId" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalesReturns">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblSalesReturn">
+              <MappingFragment StoreEntitySet="tblSalesReturn">
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+                <ScalarProperty Name="dt" ColumnName="dt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="CustCode" ColumnName="CustCode" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStaffs">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblStaff">
+              <MappingFragment StoreEntitySet="tblStaff">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ViId" ColumnName="ViId" />
+                <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+                <ScalarProperty Name="DisId" ColumnName="DisId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStocks">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblStock">
+              <MappingFragment StoreEntitySet="tblStocks">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSuppliers">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblSupplier">
+              <MappingFragment StoreEntitySet="tblSuppliers">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ViId" ColumnName="ViId" />
+                <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+                <ScalarProperty Name="DisId" ColumnName="DisId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="ConPassword" ColumnName="ConPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMoneyReceiveds">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblMoneyReceived">
+              <MappingFragment StoreEntitySet="tblMoneyReceived">
+                <ScalarProperty Name="track_id" ColumnName="track_id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="lmdt" ColumnName="lmdt" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+                <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="DepositBank" ColumnName="DepositBank" />
+                <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+                <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+                <ScalarProperty Name="CustCode" ColumnName="CustCode" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStockDetails">
+            <EntityTypeMapping TypeName="PersonelMSModel.tblStockDetail">
+              <MappingFragment StoreEntitySet="tblStockDetails">
+                <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

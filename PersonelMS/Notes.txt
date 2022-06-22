@@ -1,0 +1,68 @@
+﻿
+=======Dashboard=======
+With diff color, 
+1. Top 5 Min Items
+1. Top 5 Max Items
+1. Top 5 
+1. Top 5 Min Items
+
+Total Villages
+Total Posts
+Total Thanas
+Total District
+Total Customers
+Total Supplier
+Total Categories
+Total Items Categoris wise
+Total Sales
+Total Due
+Total Cash
+====================design
+alternate row color: if recordnumber mod 2=0 then crSilver else noColor
+
+=======Advantages==========
+    Easy to use
+    Simple to learn, intuitive
+    Customizable
+    Notifies you when to take action
+    Mobile – accessiblD:\Project For Life Time\SalesMS\SalesMS\Notes.txte everywhere.
+    Good sales reporting
+    Cross-platform integrations
+    Good looking, visual
+	Business Inteligency, Customer shorting & Take care=>contact
+	Profit loss deduct & prediction
+	can monitor from house by LAN
+========Need to publish=========
+db, crystal report 13.0.9.1312, telerik, 
+
+delete from tblCategory
+delete from tblBank
+delete from tblItemType
+delete from tblItemSize
+delete from tblPacking
+delete from tblUsers
+delete from tblCustomers
+delete from tblIncomeSource
+delete from tblExpense
+delete from tblCostCenters
+delete from tblCostElements
+delete from tblItems
+delete from tblBankTransaction
+delete from tblExpense
+delete from tblIncome
+
+delete from tblBankTransaction
+delete from tblExpense
+delete from tblIncome
+delete from tblLendBorrow
+
+delete from tblCustomers
+delete from tblItems
+
+select * from tblCategory
+select * from tblCompany
+select * from tblCustomers
+select * from tblExpense
+select * from tblItems
+select * from tblLogIn
+select * from tblUsers

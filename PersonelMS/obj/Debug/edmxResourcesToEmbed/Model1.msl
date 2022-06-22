@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PersonelMSModelStoreContainer" CdmEntityContainer="PersonelMSEntities">
+    <EntitySetMapping Name="M_tblDistrict">
+      <EntityTypeMapping TypeName="PersonelMSModel.M_tblDistrict">
+        <MappingFragment StoreEntitySet="M_tblDistrict">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DivId" ColumnName="DivId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_tblUpazila">
+      <EntityTypeMapping TypeName="PersonelMSModel.M_tblUpazila">
+        <MappingFragment StoreEntitySet="M_tblUpazila">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisId" ColumnName="DisId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_tblVillage">
+      <EntityTypeMapping TypeName="PersonelMSModel.M_tblVillage">
+        <MappingFragment StoreEntitySet="M_tblVillage">
+          <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+          <ScalarProperty Name="NameBangla" ColumnName="NameBangla" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBanks">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblBank">
+        <MappingFragment StoreEntitySet="tblBank">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBankTransactions">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblBankTransaction">
+        <MappingFragment StoreEntitySet="tblBankTransaction">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Withdraw" ColumnName="Withdraw" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCompanies">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblCompany">
+        <MappingFragment StoreEntitySet="tblCompany">
+          <ScalarProperty Name="ed_dt" ColumnName="ed_dt" />
+          <ScalarProperty Name="st_dt" ColumnName="st_dt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="CompanyMoto" ColumnName="CompanyMoto" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Contact2" ColumnName="Contact2" />
+          <ScalarProperty Name="Contact1" ColumnName="Contact1" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComId" ColumnName="ComId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCostCenters">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblCostCenter">
+        <MappingFragment StoreEntitySet="tblCostCenters">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCostElements">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblCostElement">
+        <MappingFragment StoreEntitySet="tblCostElements">
+          <ScalarProperty Name="CostCenterId" ColumnName="CostCenterId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustomers">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblCustomer">
+        <MappingFragment StoreEntitySet="tblCustomers">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsSpecial" ColumnName="IsSpecial" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ViId" ColumnName="ViId" />
+          <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+          <ScalarProperty Name="DisId" ColumnName="DisId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmails">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblEmail">
+        <MappingFragment StoreEntitySet="tblEmail">
+          <ScalarProperty Name="SSLSTATUS" ColumnName="SSLSTATUS" />
+          <ScalarProperty Name="PORT" ColumnName="PORT" />
+          <ScalarProperty Name="SMTPHOST" ColumnName="SMTPHOST" />
+          <ScalarProperty Name="EMAILPWD" ColumnName="EMAILPWD" />
+          <ScalarProperty Name="FILEPATH" ColumnName="FILEPATH" />
+          <ScalarProperty Name="MACHINEID" ColumnName="MACHINEID" />
+          <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+          <ScalarProperty Name="LMDT" ColumnName="LMDT" />
+          <ScalarProperty Name="LMBY" ColumnName="LMBY" />
+          <ScalarProperty Name="BODY" ColumnName="BODY" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="FROMEMAILID" ColumnName="FROMEMAILID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="RPTCATEGORY" ColumnName="RPTCATEGORY" />
+          <ScalarProperty Name="UIID" ColumnName="UIID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblExpenses">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblExpense">
+        <MappingFragment StoreEntitySet="tblExpense">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="HandedTo" ColumnName="HandedTo" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CostElement" ColumnName="CostElement" />
+          <ScalarProperty Name="CostHead" ColumnName="CostHead" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIncomes">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblIncome">
+        <MappingFragment StoreEntitySet="tblIncome">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IncomeSource" ColumnName="IncomeSource" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIncomeSources">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblIncomeSource">
+        <MappingFragment StoreEntitySet="tblIncomeSource">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItems">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblItem">
+        <MappingFragment StoreEntitySet="tblItems">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="UsedFor" ColumnName="UsedFor" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Pack" ColumnName="Pack" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="MaxQty" ColumnName="MaxQty" />
+          <ScalarProperty Name="MinQty" ColumnName="MinQty" />
+          <ScalarProperty Name="SalesRate" ColumnName="SalesRate" />
+          <ScalarProperty Name="PurRate" ColumnName="PurRate" />
+          <ScalarProperty Name="ItemUnit" ColumnName="ItemUnit" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="ItemSize" ColumnName="ItemSize" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="SupId" ColumnName="SupId" />
+          <ScalarProperty Name="ItemCatId" ColumnName="ItemCatId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="SrlCode" ColumnName="SrlCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemSizes">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblItemSize">
+        <MappingFragment StoreEntitySet="tblItemSize">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemTypes">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblItemType">
+        <MappingFragment StoreEntitySet="tblItemType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLendBorrows">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblLendBorrow">
+        <MappingFragment StoreEntitySet="tblLendBorrow">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="Borrow" ColumnName="Borrow" />
+          <ScalarProperty Name="Lend" ColumnName="Lend" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogIns">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblLogIn">
+        <MappingFragment StoreEntitySet="tblLogIn">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOpeningStocks">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblOpeningStock">
+        <MappingFragment StoreEntitySet="tblOpeningStocks">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPackings">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblPacking">
+        <MappingFragment StoreEntitySet="tblPacking">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPayments">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblPayment">
+        <MappingFragment StoreEntitySet="tblPayment">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="DueAmount" ColumnName="DueAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+          <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+          <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="PurId" ColumnName="PurId" />
+          <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchaseDTLs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblPurchaseDTL">
+        <MappingFragment StoreEntitySet="tblPurchaseDTL">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="PurId" ColumnName="PurId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchaseHDRs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblPurchaseHDR">
+        <MappingFragment StoreEntitySet="tblPurchaseHDR">
+          <ScalarProperty Name="OpBalance" ColumnName="OpBalance" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+          <ScalarProperty Name="AgentCost" ColumnName="AgentCost" />
+          <ScalarProperty Name="LabourCost" ColumnName="LabourCost" />
+          <ScalarProperty Name="PacketCost" ColumnName="PacketCost" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+          <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+          <ScalarProperty Name="PurID" ColumnName="PurID" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRatioCalculationDTLs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblRatioCalculationDTL">
+        <MappingFragment StoreEntitySet="tblRatioCalculationDTL">
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="TotalMon" ColumnName="TotalMon" />
+          <ScalarProperty Name="TotalSacks" ColumnName="TotalSacks" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="RatioId" ColumnName="RatioId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRatioCalculationHDRs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblRatioCalculationHDR">
+        <MappingFragment StoreEntitySet="tblRatioCalculationHDR">
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CostPerSack" ColumnName="CostPerSack" />
+          <ScalarProperty Name="ProducedPerUnit" ColumnName="ProducedPerUnit" />
+          <ScalarProperty Name="TotalProducedQty" ColumnName="TotalProducedQty" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+          <ScalarProperty Name="KhajnaCost" ColumnName="KhajnaCost" />
+          <ScalarProperty Name="ChadaCost" ColumnName="ChadaCost" />
+          <ScalarProperty Name="TrolleyCost" ColumnName="TrolleyCost" />
+          <ScalarProperty Name="KayelCost" ColumnName="KayelCost" />
+          <ScalarProperty Name="KuliCost" ColumnName="KuliCost" />
+          <ScalarProperty Name="SutliCost" ColumnName="SutliCost" />
+          <ScalarProperty Name="SackSewingCost" ColumnName="SackSewingCost" />
+          <ScalarProperty Name="SalesCarryingCost" ColumnName="SalesCarryingCost" />
+          <ScalarProperty Name="EmptySackCost" ColumnName="EmptySackCost" />
+          <ScalarProperty Name="MillCrashingCost" ColumnName="MillCrashingCost" />
+          <ScalarProperty Name="PurchaseCarryingCost" ColumnName="PurchaseCarryingCost" />
+          <ScalarProperty Name="CrashingDate" ColumnName="CrashingDate" />
+          <ScalarProperty Name="RatioId" ColumnName="RatioId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRecipients">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblRecipient">
+        <MappingFragment StoreEntitySet="tblRecipient">
+          <ScalarProperty Name="selected" ColumnName="selected" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSalesDTLs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblSalesDTL">
+        <MappingFragment StoreEntitySet="tblSalesDTL">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Itemcode" ColumnName="Itemcode" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="ComId" ColumnName="ComId" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSalesHDRs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblSalesHDR">
+        <MappingFragment StoreEntitySet="tblSalesHDR">
+          <ScalarProperty Name="OpBalance" ColumnName="OpBalance" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="TaxVAT" ColumnName="TaxVAT" />
+          <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+          <ScalarProperty Name="AgentCost" ColumnName="AgentCost" />
+          <ScalarProperty Name="LabourCost" ColumnName="LabourCost" />
+          <ScalarProperty Name="PacketCost" ColumnName="PacketCost" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+          <ScalarProperty Name="ComId" ColumnName="ComId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="SalesDate" ColumnName="SalesDate" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSalesReturns">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblSalesReturn">
+        <MappingFragment StoreEntitySet="tblSalesReturn">
+          <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+          <ScalarProperty Name="dt" ColumnName="dt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="CustCode" ColumnName="CustCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStaffs">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblStaff">
+        <MappingFragment StoreEntitySet="tblStaff">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ViId" ColumnName="ViId" />
+          <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+          <ScalarProperty Name="DisId" ColumnName="DisId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStocks">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblStock">
+        <MappingFragment StoreEntitySet="tblStocks">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSuppliers">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblSupplier">
+        <MappingFragment StoreEntitySet="tblSuppliers">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ViId" ColumnName="ViId" />
+          <ScalarProperty Name="UpaId" ColumnName="UpaId" />
+          <ScalarProperty Name="DisId" ColumnName="DisId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="ConPassword" ColumnName="ConPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMoneyReceiveds">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblMoneyReceived">
+        <MappingFragment StoreEntitySet="tblMoneyReceived">
+          <ScalarProperty Name="track_id" ColumnName="track_id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="lmdt" ColumnName="lmdt" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="ChequeDetails" ColumnName="ChequeDetails" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="DepositBank" ColumnName="DepositBank" />
+          <ScalarProperty Name="ChequeDt" ColumnName="ChequeDt" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="PayMode" ColumnName="PayMode" />
+          <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="CustCode" ColumnName="CustCode" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStockDetails">
+      <EntityTypeMapping TypeName="PersonelMSModel.tblStockDetail">
+        <MappingFragment StoreEntitySet="tblStockDetails">
+          <ScalarProperty Name="Lmdt" ColumnName="Lmdt" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

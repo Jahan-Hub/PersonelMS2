@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\sarwa\Desktop\PublishSabujBangla</_PublishTargetUrl>
+    <History>False|2021-11-10T21:21:04.2600160Z;False|2021-11-11T03:20:55.0089207+06:00;False|2021-11-11T03:19:34.2101902+06:00;False|2021-11-11T03:13:02.5690447+06:00;False|2021-11-11T03:10:42.0782649+06:00;False|2021-11-11T03:01:35.0441957+06:00;False|2021-11-11T02:57:59.0250147+06:00;False|2021-11-11T02:53:46.8930240+06:00;False|2021-11-11T02:39:45.4697018+06:00;False|2021-11-11T02:38:42.5234131+06:00;False|2021-11-11T02:38:13.9825307+06:00;False|2021-11-11T02:32:42.2336016+06:00;False|2021-11-11T02:22:05.0355665+06:00;False|2021-11-11T02:20:54.1559368+06:00;</History>
+  </PropertyGroup>
+</Project>

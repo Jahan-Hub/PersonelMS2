@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f52fbe2ff6844779bb5abe1225b2bf9" Name="Diagram1" ZoomLevel="116">
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblBank" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblBankTransaction" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblCategory" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblCostCenter" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblCostElement" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblEmail" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblExpense" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblIncome" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblIncomeSource" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblItemSize" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblItemType" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblLogIn" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblPacking" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblPayment" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblPurchaseDTL" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblPurchaseHDR" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblRecipient" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblSalesDTL" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblSalesHDR" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblSalesReturn" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblStock" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblUser" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblMoneyReceived" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblStockDetail" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.View_Customers" Width="1.5" PointX="17.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.M_tblDistrict" Width="1.5" PointX="20.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.M_tblUpazila" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.M_tblVillage" Width="1.5" PointX="3.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblCustomer" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblSupplier" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblCompany" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SobujBanglaARMModel.tblItem" Width="1.5" PointX="19.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

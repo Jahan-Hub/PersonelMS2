@@ -1,0 +1,132 @@
+﻿
+delete tblMoneyReceived
+delete tblPayment
+delete tblPurchaseHDR
+delete tblPurchaseDTL
+delete tblSalesHDR
+delete tblSalesDTL
+delete tblStock
+
+=======Dashboard=======
+With diff color, 
+1. Top 5 Min Items
+1. Top 5 Max Items
+1. Top 5 Min Sales
+1. Top 5 Max Sales
+1. Top 5 Min Purchase
+1. Top 5 Max Purchase
+1. Top 5 
+1. Top 5 Min Items
+============================
+Make Label for Halkhata
+
+============================
+
+Total Villages
+Total Posts
+Total Thanas
+Total District
+Total Customers
+Total Supplier
+Total Categories
+Total Items Categoris wise
+Total Sales
+Total Due
+Total Cash
+====================design
+alternate row color: if recordnumber mod 2=0 then crSilver else noColor
+
+=======Advantages==========
+    Easy to use
+    Simple to learn, intuitive
+    Customizable
+    Notifies you when to take action
+    Mobile – accessiblD:\Project For Life Time\SalesMS\SalesMS\Notes.txte everywhere.
+    Good sales reporting
+    Cross-platform integrations
+    Good looking, visual
+	Business Inteligency, Customer shorting & Take care=>contact
+	Profit loss deduct & prediction
+	can monitor from house by LAN
+========Need to publish=========
+db, crystal report 13.0.9.1312, telerik, 
+
+delete from tblVillages
+delete from tblPosts
+delete from tblThanas
+delete from tblDistricts
+delete from tblWeights
+delete from tblCategory
+delete from tblBank
+delete from tblItemType
+delete from tblItemSize
+delete from tblPacking
+delete from tblUsers
+delete from tblCustomers
+delete from tblSuppliers
+delete from tblStaff
+delete from tblDepartments
+delete from tblDesignations
+delete from tblIncomeSource
+delete from tblExpense
+delete from tblCostCenters
+delete from tblCostElements
+delete from tblItems
+delete from tblMoneyReceived
+delete from tblPayment
+delete from tblPurchaseHDR
+delete from tblPurchaseDTL
+delete from tblSalesHDR
+delete from tblSalesDTL
+delete from tblStocks
+delete from tblBankTransaction
+delete from tblExpense
+delete from tblSalesReturn
+delete from tblIncome
+
+
+delete from tblMoneyReceived
+delete from tblPayment
+delete from tblPurchaseHDR
+delete from tblPurchaseDTL
+delete from tblSalesHDR
+delete from tblSalesDTL
+delete from tblStocks
+delete from tblStockDetails
+delete from tblBankTransaction
+delete from tblExpense
+delete from tblSalesReturn
+delete from tblIncome
+delete from tblLendBorrow
+
+delete from tblCustomers
+delete from tblSuppliers
+delete from tblSuppliers
+delete from tblItems
+delete from tblRatioCalculationDTL
+delete from tblRatioCalculationHDR
+
+select * from tblCategory
+select * from tblCompany
+select * from tblCustomers
+select * from tblDepartments
+select * from tblDesignations
+select * from tblDistricts
+select * from tblExpense
+select * from tblExpenseHead
+select * from tblItems
+select * from tblLogIn
+select * from tblMoneyReceived
+select * from tblPayment
+select * from tblPosts
+select * from tblPurchaseDTL
+select * from tblPurchaseHDR
+select * from tblSalesDTL
+select * from tblSalesHDR
+select * from tblStock
+select * from tblSuppliers
+select * from tblThanas
+select * from tblThanas
+select * from tblUsers
+select * from tblVillages
+select * from tblWeights

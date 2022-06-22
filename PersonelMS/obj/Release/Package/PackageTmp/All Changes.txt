@@ -1,0 +1,21 @@
+﻿ALTER PROCEDURE [dbo].[SalesCommonProcedure]
+(
+	@p_OpMode	 INT= 4  -----------------
+)
+AS
+BEGIN
+IF @p_OpMode=4 -- for facing data of Login
+	begin
+		select * from tblLogIn
+	end
+END
+
+if @mode=12	-- For Sales Report / Total Sales, Receive n Due
+begin
+	SET @STRSQL =''
+	SET @STRSQL = @STRSQL +	'select a.SalesDate, a.CustId,c.Name as CustomerName, a.NetAmount as TotalSale,sum(ReceiveAmount) as TotalRceive,(a.NetAmount-sum(ReceiveAmount)) as TotalDue '
+	SET @STRSQL = @STRSQL +	' from tblSalesHDR a inner join tblMoneyReceived b on a.VoucherNo=b.InvoiceNo'
+	SET @STRSQL = @STRSQL +	' left join tblCustomers c on a.CustId=c.CustId where a.SalesDate<>'''' '
+	IF ISNULL(@CustomerId,0)<>0
+	begin
+		SET @STRSQL = @STRSQL +	' and a.CustId='''+@CustomerId+''' '  ------------------

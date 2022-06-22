@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f52fbe2ff6844779bb5abe1225b2bf9" Name="Diagram1" ZoomLevel="116">
+        <EntityTypeShape EntityType="PersonelMSModel.M_tblDistrict" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.M_tblUpazila" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.M_tblVillage" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblBank" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblBankTransaction" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblCategory" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblCompany" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblCostCenter" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblCostElement" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblCustomer" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblEmail" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblExpense" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblIncome" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblIncomeSource" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblItem" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblItemSize" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblItemType" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblLendBorrow" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblLogIn" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblOpeningStock" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblPacking" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblPayment" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblPurchaseDTL" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblPurchaseHDR" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblRatioCalculationDTL" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblRatioCalculationHDR" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblRecipient" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblSalesDTL" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblSalesHDR" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblSalesReturn" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblStaff" Width="1.5" PointX="6.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblStock" Width="1.5" PointX="8.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblSupplier" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblUser" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblMoneyReceived" Width="1.5" PointX="16.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PersonelMSModel.tblStockDetail" Width="1.5" PointX="10.75" PointY="16.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
